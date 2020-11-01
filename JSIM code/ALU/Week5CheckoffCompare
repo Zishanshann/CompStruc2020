@@ -1,0 +1,14 @@
+/*.include "C:\Users\admin\Desktop\50002\50002\nominal.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\stdcell.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\lab3compare.jsim"
+*/
+
+.subckt compare32 ALUFN[2:1] z v n cmp[31:0]
+.connect cmp[31:1] 0
+
+Xxorvn v n ale_b xor2
+Xorz ale_b z aleq_b or2
+Xmux ALUFN1 ALUFN2 0 z ale_b aleq_b cmp0 mux4
+.ends
+
+

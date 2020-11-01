@@ -1,0 +1,55 @@
+/*.include "C:\Users\admin\Desktop\50002\50002\nominal.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\stdcell.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\lab3adder.jsim"
+*/
+
+*1 bit Full Adder
+.subckt FA a b cin s co
+Xxor2_1 a b out1 xor2
+Xxor2_2 cin out1 s xor2
+Xand2_1 cin out1 out2 and2
+Xand2_2 a b out3 and2
+Xor2 out2 out3 co or2
+.ends
+
+*Z
+.subckt Z_circuit s[31:0] z
+Xor4_1 s[7:0] s[15:8] s[23:16] s[31:24] out[7:0] or4
+Xor4_2 out[7:6] out[5:4] out[3:2] out[1:0] out_intermed[1:0] or4 
+Xor4_3 out_intermed[0] out_intermed[1] final_out or2
+XinvOut final_out z inverter
+.ends
+
+*V 
+.subckt V_circuit A B s v
+XinvS s inv_s inverter
+XinvA A inv_A inverter
+XinvB B inv_B inverter
+
+Xand3_1 A B inv_s out1 and3
+Xand3_2 inv_A inv_B s out2 and3
+Xor2 out1 out2 v or2
+.ends
+
+*32 bit adder
+.subckt adder32 ALUFN[0] A[31:0] B[31:0] s[31:0] z v n
+
+Xxor_input_B B[31:0] ALUFN[0]#32 XOR[31:0] xor2
+
+XFA1 A[0] XOR[0] ALUFN[0] s[0] c[0] FA
+XFA2 A[30:1] XOR[30:1] c[29:0] s[30:1] c[30:1] FA
+XFA3 A[31] XOR[31] c[30] s[31] c[31] FA
+
+*Z
+Xz s[31:0] z Z_circuit
+
+*V
+Xv A[31] XOR[31] s[31] v V_circuit
+
+*N
+.connect s[31] n 
+
+.ends
+
+
+
