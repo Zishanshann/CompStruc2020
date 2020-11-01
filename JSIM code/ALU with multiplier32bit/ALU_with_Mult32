@@ -1,0 +1,138 @@
+.include "C:\Users\admin\Desktop\50002\50002\nominal.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\8clocks.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\Week5CheckoffAdder"
+.include "C:\Users\admin\Desktop\50002\50002\Week5CheckoffBool"
+.include "C:\Users\admin\Desktop\50002\50002\Week5CheckoffCompare"
+.include "C:\Users\admin\Desktop\50002\50002\Week5CheckoffShifter"
+.include "C:\Users\admin\Desktop\50002\50002\stdcell.jsim"
+.include "C:\Users\admin\Desktop\50002\50002\lab3checkoff_10.jsim"
+
+.subckt multiply32 A[31:0] B[31:0] out[31:0]
+Xanda A[31:0] B[0]#32 andouta[31:0] and2
+Xandb A[30:0] B[1]#31 andoutb[30:0] and2
+Xandc A[29:0] B[2]#30 andoutc[29:0] and2
+Xandd A[28:0] B[3]#29 andoutd[28:0] and2
+Xande A[27:0] B[4]#28 andoute[27:0] and2
+Xandf A[26:0] B[5]#27 andoutf[26:0] and2
+Xandg A[25:0] B[6]#26 andoutg[25:0] and2
+Xandh A[24:0] B[7]#25 andouth[24:0] and2
+Xandi A[23:0] B[8]#24 andouti[23:0] and2
+Xandj A[22:0] B[9]#23 andoutj[22:0] and2
+Xandk A[21:0] B[10]#22 andoutk[21:0] and2
+Xandl A[20:0] B[11]#21 andoutl[20:0] and2
+Xandm A[19:0] B[12]#20 andoutm[19:0] and2
+Xandn A[18:0] B[13]#19 andoutn[18:0] and2
+Xando A[17:0] B[14]#18 andouto[17:0] and2
+Xandp A[16:0] B[15]#17 andoutp[16:0] and2
+Xandq A[15:0] B[16]#16 andoutq[15:0] and2
+Xandr A[14:0] B[17]#15 andoutr[14:0] and2
+Xands A[13:0] B[18]#14 andouts[13:0] and2
+Xandt A[12:0] B[19]#13 andoutt[12:0] and2
+Xandu A[11:0] B[20]#12 andoutu[11:0] and2
+Xandv A[10:0] B[21]#11 andoutv[10:0] and2
+Xandw A[9:0] B[22]#10 andoutw[9:0] and2
+Xandx A[8:0] B[23]#9 andoutx[8:0] and2
+Xandy A[7:0] B[24]#8 andouty[7:0] and2
+Xandz A[6:0] B[25]#7 andoutz[6:0] and2
+Xandaa A[5:0] B[26]#6 andoutaa[5:0] and2
+Xandab A[4:0] B[27]#5 andoutab[4:0] and2
+Xandac A[3:0] B[28]#4 andoutac[3:0] and2
+Xandad A[2:0] B[29]#3 andoutad[2:0] and2
+Xandae A[1:0] B[30]#2 andoutae[1:0] and2
+Xandaf A[0] B[31] andoutaf[0] and2
+
+
+XFA1a andouta[1] andoutb[0] 0 out[1] COb[0] FA
+XFA1b andouta[31:2] andoutb[30:1] COb[29:0] Sb[29:0] COb[30:1] FA
+XFA2a Sb[0] andoutc[0] 0 out[2] COc[0] FA
+XFA2b Sb[29:1] andoutc[29:1] COc[28:0] Sc[28:0] COc[29:1] FA
+XFA3a Sc[0] andoutd[0] 0 out[3] COd[0] FA
+XFA3b Sc[28:1] andoutd[28:1] COd[27:0] Sd[27:0] COd[28:1] FA
+XFA4a Sd[0] andoute[0] 0 out[4] COe[0] FA
+XFA4b Sd[27:1] andoute[27:1] COe[26:0] Se[26:0] COe[27:1] FA
+XFA5a Se[0] andoutf[0] 0 out[5] COf[0] FA
+XFA5b Se[26:1] andoutf[26:1] COf[25:0] Sf[25:0] COf[26:1] FA
+XFA6a Sf[0] andoutg[0] 0 out[6] COg[0] FA
+XFA6b Sf[25:1] andoutg[25:1] COg[24:0] Sg[24:0] COg[25:1] FA
+XFA7a Sg[0] andouth[0] 0 out[7] COh[0] FA
+XFA7b Sg[24:1] andouth[24:1] COh[23:0] Sh[23:0] COh[24:1] FA
+XFA8a Sh[0] andouti[0] 0 out[8] COi[0] FA
+XFA8b Sh[23:1] andouti[23:1] COi[22:0] Si[22:0] COi[23:1] FA
+XFA9a Si[0] andoutj[0] 0 out[9] COj[0] FA
+XFA9b Si[22:1] andoutj[22:1] COj[21:0] Sj[21:0] COj[22:1] FA
+XFA10a Sj[0] andoutk[0] 0 out[10] COk[0] FA
+XFA10b Sj[21:1] andoutk[21:1] COk[20:0] Sk[20:0] COk[21:1] FA
+XFA11a Sk[0] andoutl[0] 0 out[11] COl[0] FA
+XFA11b Sk[20:1] andoutl[20:1] COl[19:0] Sl[19:0] COl[20:1] FA
+XFA12a Sl[0] andoutm[0] 0 out[12] COm[0] FA
+XFA12b Sl[19:1] andoutm[19:1] COm[18:0] Sm[18:0] COm[19:1] FA
+XFA13a Sm[0] andoutn[0] 0 out[13] COn[0] FA
+XFA13b Sm[18:1] andoutn[18:1] COn[17:0] Sn[17:0] COn[18:1] FA
+XFA14a Sn[0] andouto[0] 0 out[14] COo[0] FA
+XFA14b Sn[17:1] andouto[17:1] COo[16:0] So[16:0] COo[17:1] FA
+XFA15a So[0] andoutp[0] 0 out[15] COp[0] FA
+XFA15b So[16:1] andoutp[16:1] COp[15:0] Sp[15:0] COp[16:1] FA
+XFA16a Sp[0] andoutq[0] 0 out[16] COq[0] FA
+XFA16b Sp[15:1] andoutq[15:1] COq[14:0] Sq[14:0] COq[15:1] FA
+XFA17a Sq[0] andoutr[0] 0 out[17] COr[0] FA
+XFA17b Sq[14:1] andoutr[14:1] COr[13:0] Sr[13:0] COr[14:1] FA
+XFA18a Sr[0] andouts[0] 0 out[18] COs[0] FA
+XFA18b Sr[13:1] andouts[13:1] COs[12:0] Ss[12:0] COs[13:1] FA
+XFA19a Ss[0] andoutt[0] 0 out[19] COt[0] FA
+XFA19b Ss[12:1] andoutt[12:1] COt[11:0] St[11:0] COt[12:1] FA
+XFA20a St[0] andoutu[0] 0 out[20] COu[0] FA
+XFA20b St[11:1] andoutu[11:1] COu[10:0] Su[10:0] COu[11:1] FA
+XFA21a Su[0] andoutv[0] 0 out[21] COv[0] FA
+XFA21b Su[10:1] andoutv[10:1] COv[9:0] Sv[9:0] COv[10:1] FA
+XFA22a Sv[0] andoutw[0] 0 out[22] COw[0] FA
+XFA22b Sv[9:1] andoutw[9:1] COw[8:0] Sw[8:0] COw[9:1] FA
+XFA23a Sw[0] andoutx[0] 0 out[23] COx[0] FA
+XFA23b Sw[8:1] andoutx[8:1] COx[7:0] Sx[7:0] COx[8:1] FA
+XFA24a Sx[0] andouty[0] 0 out[24] COy[0] FA
+XFA24b Sx[7:1] andouty[7:1] COy[6:0] Sy[6:0] COy[7:1] FA
+XFA25a Sy[0] andoutz[0] 0 out[25] COz[0] FA
+XFA25b Sy[6:1] andoutz[6:1] COz[5:0] Sz[5:0] COz[6:1] FA
+XFA26a Sz[0] andoutaa[0] 0 out[26] COaa[0] FA
+XFA26b Sz[5:1] andoutaa[5:1] COaa[4:0] Saa[4:0] COaa[5:1] FA
+XFA27a Saa[0] andoutab[0] 0 out[27] COab[0] FA 
+XFA27b Saa[4:1] andoutab[4:1] COab[3:0] Sab[3:0] COab[4:1] FA
+XFA28a Sab[0] andoutac[0] 0 out[28] COac[0] FA 
+XFA28b Sab[3:1] andoutac[3:1] COac[2:0] Sac[2:0] COac[3:1] FA
+XFA29a Sac[0] andoutad[0] 0 out[29] COad[0] FA 
+XFA29b Sac[2:1] andoutad[2:1] COad[1:0] Sad[1:0] COad[2:1] FA
+XFA30a Sad[0] andoutae[0] 0 out[30] COae[0] FA 
+XFA30b Sad[1] andoutae[1] COae[0] Sae[0] COae[1] FA
+XFA31a Sae[0] andoutaf[0] 0 out[31] COaf FA
+
+.connect out[0] andouta[0]
+
+.ends
+
+.subckt mux a b select out 
+XINV select select_inv inverter_2
+XAND1 select_inv a a_select and2
+XAND2 select b b_select and2
+XOR a_select b_select out or2
+.ends
+
+*4 multiplexer for
+.subckt sel4to1 a b c d s[1:0] out
+Xmux1 a b s0 aboutput mux
+Xmux2 c d s0 cdoutput mux
+Xmux3 aboutput cdoutput s1 out mux 
+.ends
+
+*5 multiplexer for
+.subckt sel5to1 a b c d e s[2:0] out
+Xmux1 a b s2 aboutput mux
+Xsel4to1 aboutput c d e s[1:0] out sel4to1
+.ends
+
+.subckt alu ALUFN[5:0] A[31:0] B[31:0] alu[31:0] z v n
+Xadder32 alufn[0] a[31:0] b[31:0] s[31:0] z v n adder32
+Xcompare32 alufn[2:1] z v n cmp[31:0] compare32
+Xboole32 alufn[3:0] a[31:0] b[31:0] boole[31:0] boole32
+Xshift32 alufn[1:0] a[31:0] b[4:0] shift[31:0] shift32
+Xmult32 a[31:0] b[31:0] mul[31:0] multiply32
+Xmux s[31:0] mul[31:0] boole[31:0] shift[31:0] cmp[31:0] ALUFN1#32 ALUFN5#32 ALUFN4#32 alu[31:0] sel5to1
+.ends
